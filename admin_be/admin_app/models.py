@@ -18,7 +18,7 @@ class StudentRecord(models.Model):
         ("checked_out", "Checked Out"),
         ("absent", "Absent"),
     ]
-    student = models.ForeignKey(StudentDetailModel,on_delete=models.CASCADE)
+    student = models.ForeignKey(StudentDetailModel,on_delete=models.CASCADE, related_name="student_detail")
     status = models.CharField(max_length=100,choices=STATUS_CHOICES,default="absent")
     room_number = models.CharField(max_length=50)
     hostel_number = models.CharField(max_length=50)
