@@ -12,6 +12,24 @@ class StudentDetailModel(models.Model):
     def __str__(self):
         return f'{self.name} {self.father_name}'
 
+class Furniture(models.Model):
+    ceiling_fan = models.IntegerField(default=0)
+    table = models.IntegerField(default=0)
+    chair = models.IntegerField(default=0)
+    refrigerator = models.IntegerField(default=0)
+    def __str__(self):
+        return f'Furniture : {self.id}'
+
+class HostelView(models.Model):
+    name = models.CharField(max_length=200)
+    rooms = models.IntegerField(default=None)
+    occupied = models.IntegerField(default=0)
+    floors = models.IntegerField(default=None)
+    location = models.CharField(max_length=300,null=True,blank=True)
+    furniture = models.ForeignKey(Furniture, on_delete=models.CASCADE) 
+    
+    def __str__(self):
+        return f'{self.name}'   
 class StudentRecord(models.Model):
     STATUS_CHOICES = [
         ("checked_in", "Checked In"),

@@ -12,3 +12,7 @@ class StudentRecordView(generics.ListAPIView):
     permission_classes = [AllowAny]
     queryset = StudentRecord.objects.all()
     serializer_class = StudentRecordSerializer
+    
+class HostelView(generics.ListAPIView):
+    queryset = HostelView.objects.all()
+    serializer_class = HostelSerializer
