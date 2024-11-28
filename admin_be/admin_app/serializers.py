@@ -1,6 +1,5 @@
 from .models import *
 from rest_framework import serializers
-
 class LatestCustomersSerializer(serializers.ModelSerializer):
     class Meta:
         model = LatestCustomers
@@ -9,10 +8,11 @@ class LatestCustomersSerializer(serializers.ModelSerializer):
 class StudentDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentDetailModel
-        fields = "__all__"
+        fields = ['name','age','father_name']
+        
 
 class StudentRecordSerializer(serializers.ModelSerializer):
-    student = StudentDetailSerializer
+    student = StudentDetailSerializer()
     class Meta:
         model = StudentRecord
         fields = ["status","room_number","hostel_number","date","duration","check_in_time","check_out_time","student"]
