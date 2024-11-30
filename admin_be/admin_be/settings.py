@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'admin_app',
+    'auth_user',
+    'django_filters',
     'rest_framework',
 ]
 
@@ -129,3 +131,10 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+
+AUTH_USER_MODEL = "auth_user.User"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = "/media/"

@@ -44,16 +44,16 @@ class StudentRecord(models.Model):
     check_in_time = models.DateTimeField(null=True, blank=True)
     check_out_time = models.DateTimeField(null=True, blank=True)
     duration = models.DurationField(null=True, blank=True)  # Use DurationField to store the time difference
-    def save(self, *args, **kwargs):
-            if self.check_in_time and not self.check_out_time:
-                self.status = "checked_in"
-            elif self.check_out_time:
-                self.status = "checked_out"
-                # Calculate the duration only when check_out_time is set
-                if self.check_in_time:
-                    self.duration = self.check_out_time - self.check_in_time
+    # def save(self, *args, **kwargs):
+    #         if self.check_in_time and not self.check_out_time:
+    #             self.status = "checked_in"
+    #         elif self.check_out_time:
+    #             self.status = "checked_out"
+    #             # Calculate the duration only when check_out_time is set
+    #             if self.check_in_time:
+    #                 self.duration = self.check_out_time - self.check_in_time
 
-            super().save(*args, **kwargs)
+    #         super().save(*args, **kwargs)
 
     @property
     def formatted_duration(self):
