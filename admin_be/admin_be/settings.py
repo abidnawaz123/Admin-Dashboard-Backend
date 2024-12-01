@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'admin_app',
     'auth_user',
     'django_filters',
+    'drf_spectacular',
     'rest_framework',
 ]
 
@@ -130,8 +131,16 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS' : 'drf_spectacular.openapi.AutoSchema',
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Learning Rest Framework',
+    'DESCRIPTION': 'Learning backend as much as i can , api / serialization / ORM ',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
 
 AUTH_USER_MODEL = "auth_user.User"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
