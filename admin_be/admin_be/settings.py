@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'admin_app',
     'auth_user',
+    'bookstore',
     'django_filters',
     'drf_spectacular',
     'rest_framework',
