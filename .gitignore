@@ -4,5 +4,6 @@ __pycache__/
 *.pyc
 .venv*/
 .venv/
+my_environment/
 .idea
 launch.json
