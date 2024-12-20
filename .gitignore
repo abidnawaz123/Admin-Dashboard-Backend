@@ -2,6 +2,7 @@
 admin_be/db.sqlite3
 __pycache__/
 *.pyc
+.venv*/
 .venv/
 .idea
 launch.json
